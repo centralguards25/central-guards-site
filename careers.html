@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - CentralGuards Security Services</title>
+    <meta name="description" content="Join our team at CentralGuards Security Services. Explore exciting career opportunities in security services and become part of a leading security provider.">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/logo.css">
+    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/careers.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- =========================== HEADER SECTION =========================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="images/cgss-logo.png" alt="CentralGuards Security Services Logo">
+                </a>
+            </div>
+            
+            <div class="header-right">
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                        <span class="hamburger-icon"></span>
+                    </button>
+                    
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="careers.html" class="nav-link active">Careers</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="#" class="btn btn-primary" id="getQuoteBtn">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ========================= END HEADER SECTION ========================= -->
+
+    <!-- =========================== MAIN CONTENT SECTION =========================== -->
+    <main class="site-main">
+        <!-- Careers Hero Section -->
+        <section class="careers-hero-section">
+            <div class="container">
+                <div class="careers-hero-content">
+                    <h1 class="page-title">Join Our Team</h1>
+                    <p class="lead-text">Build your career with a company that values expertise, integrity, and dedication to excellence in security services.</p>
+                    <a href="#search-jobs" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Search Open Positions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us Section -->
+        <section class="why-join-section">
+            <div class="container">
+                <h2 class="section-title">Why Join CentralGuards?</h2>
+                
+                <div class="benefits-grid">
+                    <!-- Benefit 1 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Professional Development</h3>
+                        <p>Continuous training programs and clear career advancement paths help you develop your skills and grow professionally.</p>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Industry-Leading Training</h3>
+                        <p>Receive comprehensive training in the latest security techniques, technology, and protocols to ensure you're prepared for any situation.</p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Comprehensive Benefits</h3>
+                        <p>Enjoy competitive pay, health insurance, retirement plans, paid time off, and additional benefits that support your wellbeing.</p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Inclusive Culture</h3>
+                        <p>Join a diverse team that values different perspectives and fosters an environment of respect, collaboration, and mutual support.</p>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Industry Recognition</h3>
+                        <p>Work for a recognized leader in the security industry with a reputation for excellence and customer satisfaction.</p>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Make a Difference</h3>
+                        <p>Play a vital role in protecting people, property, and assets, making a meaningful contribution to community safety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Jobs Section -->
+        <section id="search-jobs" class="search-jobs-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-form">
+                        <div class="search-form-header">
+                            <h2>Find Your Perfect Role</h2>
+                            <p>Search our current openings to find the position that matches your skills and career goals.</p>
+                        </div>
+                        
+                        <form id="jobSearchForm">
+                            <div class="search-form-row">
+                                <div class="search-field">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="search" id="keywordSearch" name="keyword" placeholder="Search job titles, skills, or keywords..." aria-label="Search jobs by keyword">
+                                </div>
+                                
+                                <div class="search-field">
+                                    <select id="locationFilter" name="location" aria-label="Filter by location">
+                                        <option value="">All Locations</option>
+                                        <option value="new-york">New York, NY</option>
+                                        <option value="los-angeles">Los Angeles, CA</option>
+                                        <option value="chicago">Chicago, IL</option>
+                                        <option value="dallas">Dallas, TX</option>
+                                        <option value="miami">Miami, FL</option>
+                                        <option value="remote">Remote</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="search-field">
+                                    <select id="departmentFilter" name="department" aria-label="Filter by department">
+                                        <option value="">All Departments</option>
+                                        <option value="security-officers">Security Officers</option>
+                                        <option value="operations">Operations</option>
+                                        <option value="technology">Technology</option>
+                                        <option value="administration">Administration</option>
+                                        <option value="management">Management</option>
+                                        <option value="human-resources">Human Resources</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="search-field">
+                                    <select id="jobTypeFilter" name="job_type" aria-label="Filter by job type">
+                                        <option value="">All Job Types</option>
+                                        <option value="full-time">Full-Time</option>
+                                        <option value="part-time">Part-Time</option>
+                                        <option value="contract">Contract</option>
+                                        <option value="temporary">Temporary</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="search-actions">
+                                <button type="submit" class="search-btn" id="searchJobsBtn">
+                                    <i class="fas fa-search"></i>
+                                    Search Jobs
+                                </button>
+                                <button type="reset" class="reset-btn" id="resetSearchBtn">
+                                    <i class="fas fa-redo"></i>
+                                    Clear Filters
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="jobs-results">
+                        <div class="results-header">
+                            <div class="results-count">Showing <span id="jobCount">6</span> available positions</div>
+                            <div class="results-sort">
+                                <label for="sortOrder">Sort by:</label>
+                                <select id="sortOrder" name="sort">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="title">Job Title</option>
+                                    <option value="location">Location</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="jobs-list" id="jobsList">
+                            <!-- Job Card 1 -->
+                            <div class="job-card" data-job-id="1" data-department="security-officers" data-location="new-york" data-type="full-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Security Team Lead</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>New York, NY</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Full-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 2 days ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Lead a team of security officers ensuring the safety and security of client facilities. Supervise daily operations, coordinate assignments, and manage incident response.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Team Leadership</span>
+                                        <span class="job-tag">Security Operations</span>
+                                        <span class="job-tag">3+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=1" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 2 -->
+                            <div class="job-card" data-job-id="2" data-department="technology" data-location="remote" data-type="full-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Security Systems Engineer</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Remote</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Full-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 1 week ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Design, implement, and maintain electronic security systems including access control, surveillance, and alarm systems. Provide technical support and troubleshooting for security infrastructure.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Electronic Security</span>
+                                        <span class="job-tag">Technical Support</span>
+                                        <span class="job-tag">Remote Work</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=2" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 3 -->
+                            <div class="job-card" data-job-id="3" data-department="security-officers" data-location="los-angeles" data-type="part-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Event Security Officer</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Los Angeles, CA</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Part-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 3 days ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Provide security services for special events, concerts, conferences, and corporate functions. Manage crowd control, access points, and respond to security incidents.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Event Security</span>
+                                        <span class="job-tag">Crowd Management</span>
+                                        <span class="job-tag">Flexible Schedule</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=3" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 4 -->
+                            <div class="job-card" data-job-id="4" data-department="management" data-location="chicago" data-type="full-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Regional Security Manager</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Chicago, IL</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Full-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 5 days ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Oversee security operations for multiple client sites in the Chicago region. Develop security programs, manage client relationships, and ensure compliance with security protocols.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Regional Management</span>
+                                        <span class="job-tag">Client Relations</span>
+                                        <span class="job-tag">5+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=4" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 5 -->
+                            <div class="job-card" data-job-id="5" data-department="operations" data-location="dallas" data-type="full-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Security Operations Coordinator</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Dallas, TX</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Full-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Coordinate security operations including scheduling, resource allocation, and incident reporting. Serve as liaison between field security personnel and management.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Operations Coordination</span>
+                                        <span class="job-tag">Scheduling</span>
+                                        <span class="job-tag">Reporting</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=5" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 6 -->
+                            <div class="job-card" data-job-id="6" data-department="human-resources" data-location="miami" data-type="full-time">
+                                <div class="job-info">
+                                    <h3 class="job-title">Security Recruiter</h3>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Miami, FL</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Full-Time</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Posted 4 days ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="job-description">Source, screen, and recruit security personnel for various positions. Conduct interviews, background checks, and facilitate the onboarding process for new hires.</p>
+                                    <div class="job-tags">
+                                        <span class="job-tag">Recruiting</span>
+                                        <span class="job-tag">HR</span>
+                                        <span class="job-tag">Interviewing</span>
+                                    </div>
+                                </div>
+                                <div class="job-action">
+                                    <a href="job-detail.html?id=6" class="view-job-btn">
+                                        <span>View Job</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- No Results State (initially hidden) -->
+                        <div class="no-results" id="noResults" style="display: none;">
+                            <div class="no-results-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>No matching jobs found</h3>
+                            <p>We couldn't find any positions matching your search criteria. Try adjusting your filters or search terms, or check back soon as new opportunities are posted regularly.</p>
+                            
+                            <div class="suggested-searches">
+                                <span>Try searching for:</span>
+                                <button type="button" class="suggested-search" data-keyword="security">Security</button>
+                                <button type="button" class="suggested-search" data-keyword="officer">Officer</button>
+                                <button type="button" class="suggested-search" data-keyword="manager">Manager</button>
+                                <button type="button" class="suggested-search" data-keyword="remote">Remote</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Loading State (initially hidden) -->
+                        <div class="loading-results" id="loadingResults" style="display: none;">
+                            <i class="fas fa-spinner loading-spinner"></i>
+                            <p>Searching for matching positions...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section class="culture-section">
+            <div class="container">
+                <div class="culture-content">
+                    <h2>Our Team Culture</h2>
+                    <p>At CentralGuards, we believe our people are our greatest asset. We foster a culture of excellence, integrity, and teamwork where every employee is valued and empowered to succeed. We are committed to diversity, inclusion, and creating a supportive environment where innovative ideas thrive.</p>
+                    <a href="about.html" class="culture-cta">
+                        <span>Learn About Our Values</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Our Application Process</h2>
+                
+                <div class="process-steps">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Apply Online</h3>
+                            <p class="step-description">Search for positions and submit your application through our careers portal.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Initial Screening</h3>
+                            <p class="step-description">Our recruitment team reviews your application and conducts a phone screening.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Interview</h3>
+                            <p class="step-description">Selected candidates are invited for interviews with hiring managers.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Assessment</h3>
+                            <p class="step-description">Depending on the role, you may complete job-specific assessments or tests.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Job Offer</h3>
+                            <p class="step-description">Successful candidates receive a job offer and onboarding information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What Our Team Members Say</h2>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-grid">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"Joining CentralGuards was one of the best career decisions I've made. The comprehensive training and clear advancement opportunities have allowed me to grow from an entry-level officer to a regional supervisor in just five years."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/M" alt="Michael Rodriguez">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Michael Rodriguez</h4>
+                                        <p>Regional Supervisor, 5 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"The company truly values work-life balance. As a parent, I appreciate the flexible scheduling options and supportive management team. CentralGuards provides an inclusive workplace where everyone feels respected and appreciated."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/F" alt="Sarah Johnson">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Security Operations Coordinator, 3 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"I started in security with no prior experience, and CentralGuards provided all the training and support I needed to succeed. The company invests in its employees and rewards dedication with competitive compensation and benefits."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/M2" alt="David Chen">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>David Chen</h4>
+                                        <p>Security Officer, 2 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"The professional development opportunities at CentralGuards are unmatched in the industry. I've gained valuable certifications and skills that have advanced my career while working with a fantastic team of security professionals."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/F2" alt="Jennifer Williams">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Jennifer Williams</h4>
+                                        <p>Training Specialist, 4 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="careers-faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="new-faq-container">
+                        <!-- FAQ Item 1 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>What qualifications do I need to work as a security officer?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>Basic qualifications include a high school diploma or equivalent, a clean criminal history, and the ability to pass a background check. Depending on the position, you may need additional certifications or licenses specific to your state. CentralGuards provides comprehensive training to qualified candidates.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>What benefits does CentralGuards offer?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>We offer a comprehensive benefits package that includes health, dental, and vision insurance, 401(k) retirement plan with company match, paid time off, paid training, career advancement opportunities, employee assistance program, and uniform allowance. Specific benefits may vary by position and employment status.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>How long does the hiring process take?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>Our hiring process typically takes 2-3 weeks from application to offer, depending on the position and background check requirements. This includes application review, phone screening, interviews, assessments, and background checks. We strive to keep candidates informed throughout the process.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>What training will I receive?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>CentralGuards provides comprehensive initial training for all security positions, including security fundamentals, emergency response, conflict resolution, and site-specific protocols. We also offer ongoing professional development, specialized training for specific roles, and support for industry certifications.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>Are there opportunities for advancement?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>Yes, we strongly believe in promoting from within. Many of our supervisors and managers started as security officers. We offer clear career paths, leadership development programs, and tuition assistance to help employees advance their careers within CentralGuards.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 6 -->
+                        <div class="new-faq-item">
+                            <div class="new-faq-header">
+                                <h3>What if I don't see a job that matches my skills?</h3>
+                                <span class="new-faq-icon">+</span>
+                            </div>
+                            <div class="new-faq-content">
+                                <p>You can join our talent network to receive notifications when relevant positions become available. You can also submit a general application for future consideration. We're always looking for talented individuals to join our team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Join Our Team?</h2>
+                    <p>Take the first step toward a rewarding career in security with CentralGuards.</p>
+                    <a href="#search-jobs" class="btn btn-primary">View Open Positions</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ========================= END MAIN CONTENT SECTION ========================= -->
+
+    <!-- =========================== FOOTER SECTION =========================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/cgss-logo.png" alt="CentralGuards Security Services Logo">
+                    <p>Professional security solutions tailored to protect what matters most to you and your business.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-nav-column">
+                        <h4 class="footer-nav-title">About Us</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="about.html#company-overview">Company Overview</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#leadership">Leadership Team</a></li>
+                            <li><a href="about.html#history">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4 class="footer-nav-title">Services</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="services.html#physical-security">Physical Security</a></li>
+                            <li><a href="services.html#electronic-security">Electronic Security</a></li>
+                            <li><a href="services.html#specialized-services">Specialized Services</a></li>
+                            <li><a href="services.html#security-consulting">Security Consulting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4 class="footer-nav-title">Careers</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="careers.html#search-jobs">Current Openings</a></li>
+                            <li><a href="careers.html#why-join-section">Training Programs</a></li>
+                            <li><a href="careers.html#why-join-section">Benefits</a></li>
+                            <li><a href="careers.html#search-jobs">Apply Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4 class="footer-nav-title">Contact</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="#" id="footerQuoteBtn">Request a Quote</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                            <li><a href="contact.html#map-section">Locations</a></li>
+                            <li><a href="contact.html">Emergency Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>24/7 Contact: 1-800-CENTRAL</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@centralguards.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Security Ave, Suite 500, Safetown, ST 12345</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 CentralGuards Security Services. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= END FOOTER SECTION ========================= -->
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/careers.js"></script>
+</body>
+</html> 

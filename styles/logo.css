@@ -1,0 +1,46 @@
+/* ===========================
+   LOGO STYLES - CentralGuards
+   =========================== */
+
+.logo-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.logo {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.logo img {
+    height: 55px; /* Adjusted for the official logo */
+    width: auto;
+    display: block; /* Prevent extra spacing */
+    object-fit: contain; /* Ensures the logo fits properly */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .logo img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 40px;
+    }
+} 

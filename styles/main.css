@@ -1,0 +1,263 @@
+/* ===========================
+   MAIN CSS - Global Styles
+   =========================== */
+
+/* CSS Variables */
+:root {
+    /* Primary Colors */
+    --primary-color: #00205b;
+    --secondary-color: #e10600;
+    --accent-color: #f5a623;
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --light-gray: #e6e6e6;
+    --medium-gray: #999999;
+    --dark-gray: #555555;
+    --black: #222222;
+    
+    /* Font Sizes */
+    --font-xs: 0.75rem;    /* 12px */
+    --font-sm: 0.875rem;   /* 14px */
+    --font-base: 1rem;     /* 16px */
+    --font-md: 1.125rem;   /* 18px */
+    --font-lg: 1.25rem;    /* 20px */
+    --font-xl: 1.5rem;     /* 24px */
+    --font-2xl: 2rem;      /* 32px */
+    --font-3xl: 2.5rem;    /* 40px */
+    --font-4xl: 3rem;      /* 48px */
+    
+    /* Spacing */
+    --space-xs: 0.25rem;   /* 4px */
+    --space-sm: 0.5rem;    /* 8px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-2xl: 3rem;     /* 48px */
+    --space-3xl: 4rem;     /* 64px */
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;  /* 4px */
+    --radius-md: 0.5rem;   /* 8px */
+    --radius-lg: 1rem;     /* 16px */
+    --radius-pill: 9999px;
+    
+    /* Box Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Container Width */
+    --container-width: 1200px;
+    --container-padding: 1rem;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: var(--font-base);
+    line-height: 1.5;
+    color: var(--black);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Global Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+}
+
+/* Hide standalone modal content that might appear in the page flow */
+body > h1:first-of-type + form,
+body > form#quoteRequestForm:not(.quote-form),
+body > div:not(.container):not(.site-header):not(.site-footer):not(.quote-modal-overlay):not(.service-modal-overlay) > form#quoteRequestForm,
+body > h3 + form#quoteRequestForm {
+    display: none !important;
+}
+
+.section-title {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: var(--font-md);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: all var(--transition-normal);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--dark-gray);
+    border: 2px solid var(--light-gray);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero-specific button styles */
+.hero-section .btn-primary {
+    background-color: #1e88e5;
+    color: var(--white);
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #1565c0;
+}
+
+.hero-section .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: none;
+}
+
+.hero-section .btn-secondary:hover {
+    background-color: var(--white);
+    color: #1e88e5;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    :root {
+        --container-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --container-width: 960px;
+    }
+    
+    .section-title {
+        font-size: var(--font-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-width: 720px;
+    }
+    
+    body {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --container-width: 100%;
+        --container-padding: 1rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Focus States */
+input:focus, 
+textarea:focus, 
+select:focus, 
+button:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 32, 91, 0.2);
+} 
