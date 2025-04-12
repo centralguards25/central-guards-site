@@ -158,23 +158,79 @@ function initJobFilters() {
  * Initialize the FAQ accordion functionality
  */
 function initFaqAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqItems = document.querySelectorAll('.new-faq-item');
     
+    // First, set all closed initially
+    faqItems.forEach((faqItem, index) => {
+        const content = faqItem.querySelector('.new-faq-content');
+        if (content) {
+            content.style.maxHeight = '0';
+        }
+    });
+    
+    // Add click handlers
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+        const header = item.querySelector('.new-faq-header');
+        const content = item.querySelector('.new-faq-content');
         
-        question.addEventListener('click', function() {
-            // Toggle active class on the clicked item
-            item.classList.toggle('active');
-            
-            // Close other open items (optional)
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
+        if (header && content) {
+            header.addEventListener('click', function() {
+                // Check if this item is already active
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                    const faqContent = faqItem.querySelector('.new-faq-content');
+                    if (faqContent) {
+                        faqContent.style.maxHeight = '0';
+                    }
+                });
+                
+                // If this item wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('active');
+                    // Calculate proper height including padding
+                    const contentHeight = content.scrollHeight;
+                    content.style.maxHeight = (contentHeight + 40) + 'px'; // Add padding
+                    
+                    // Scroll the item into view if needed
+                    setTimeout(() => {
+                        const itemRect = item.getBoundingClientRect();
+                        if (itemRect.top < 0 || itemRect.bottom > window.innerHeight) {
+                            const headerHeight = document.querySelector('.site-header').offsetHeight;
+                            window.scrollTo({
+                                top: item.offsetTop - headerHeight - 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 300);
                 }
             });
-        });
+        }
     });
+    
+    // Support for old FAQ items if they exist
+    const oldFaqItems = document.querySelectorAll('.faq-item');
+    if (oldFaqItems.length > 0) {
+        oldFaqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            if (question) {
+                question.addEventListener('click', function() {
+                    // Toggle active class on the clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other open items
+                    oldFaqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+    }
 }
 
 /**

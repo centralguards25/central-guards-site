@@ -200,9 +200,24 @@ function initLocationTabs() {
 function initFaqAccordion() {
     const faqItems = document.querySelectorAll('.new-faq-item');
     
+    // First, set all closed except the first one (or one with active class)
+    faqItems.forEach((faqItem, index) => {
+        const content = faqItem.querySelector('.new-faq-content');
+        const contentInner = faqItem.querySelector('.new-faq-content-inner');
+        
+        if (!faqItem.classList.contains('active')) {
+            content.style.maxHeight = '0';
+        } else {
+            // Calculate the proper height including padding
+            content.style.maxHeight = contentInner.offsetHeight + 40 + 'px'; // 20px top + 20px bottom padding
+        }
+    });
+    
+    // Add click handlers
     faqItems.forEach(item => {
         const header = item.querySelector('.new-faq-header');
         const content = item.querySelector('.new-faq-content');
+        const contentInner = item.querySelector('.new-faq-content-inner');
         
         header.addEventListener('click', function() {
             // Check if this item is already active
@@ -217,7 +232,20 @@ function initFaqAccordion() {
             // If this item wasn't active, open it
             if (!isActive) {
                 item.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + 'px';
+                // Add extra padding to height calculation
+                content.style.maxHeight = contentInner.offsetHeight + 40 + 'px'; // 20px top + 20px bottom padding
+                
+                // Scroll the item into view (if it's not fully visible)
+                setTimeout(() => {
+                    const itemRect = item.getBoundingClientRect();
+                    if (itemRect.top < 0 || itemRect.bottom > window.innerHeight) {
+                        const headerHeight = document.querySelector('.site-header').offsetHeight;
+                        window.scrollTo({
+                            top: item.offsetTop - headerHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 300);
             }
         });
     });
