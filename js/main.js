@@ -7,14 +7,58 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('CentralGuards Website Initialized');
     
-    // Initialize all components
-    initHeader();
-    initContentComponents();
-    initFooter();
-    
-    // Ensure modals work properly
-    setTimeout(ensureModalsWork, 500);
+    // Initialize other components
+    initializeAllComponents();
 });
+
+/**
+ * Initializes all components of the website
+ */
+function initializeAllComponents() {
+    console.log('Initializing all components');
+    
+    // Initialize components
+    setupLogoClickHandler();
+    setupMobileMenuLinks();
+    
+    // Initialize modals
+    ensureModalsWork();
+}
+
+/**
+ * Handles click events on the logo
+ * Returns user to the homepage
+ */
+function setupLogoClickHandler() {
+    const logo = document.querySelector('.logo');
+    if (!logo) return;
+    
+    logo.addEventListener('click', function(e) {
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
+/**
+ * Ensures mobile menu links close the menu when clicked
+ */
+function setupMobileMenuLinks() {
+    const navLinks = document.querySelectorAll('nav a');
+    const menuCheckbox = document.querySelector('#mobile-menu-toggle');
+    
+    if (menuCheckbox) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuCheckbox.checked = false;
+            });
+        });
+    }
+}
 
 // Utility Functions
 const utils = {
@@ -97,23 +141,23 @@ const utils = {
     removeEvent: function(element, event, callback) {
         if (!element) return;
         element.removeEventListener(event, callback);
-    },
-    
-    /**
-     * Debounce function to limit how often a function can be called
-     * @param {Function} func - The function to debounce
-     * @param {number} wait - The debounce wait time in milliseconds
-     * @return {Function} - The debounced function
-     */
-    debounce: function(func, wait) {
-        let timeout;
-        return function(...args) {
-            const context = this;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(context, args), wait);
-        };
     }
 };
+
+/**
+ * Debounce function to limit how often a function can be called
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - The debounce wait time in milliseconds
+ * @return {Function} - The debounced function
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
 
 /**
  * Function to ensure all modals work properly
@@ -123,7 +167,7 @@ function ensureModalsWork() {
     console.log('Ensuring modals work properly...');
     
     // Quote Modal Buttons
-    const quoteButtons = document.querySelectorAll('#getQuoteBtn, #footerQuoteBtn, #ctaQuoteBtn');
+    const quoteButtons = document.querySelectorAll('#getQuoteBtn, #footerQuoteBtn, #ctaQuoteBtn, #mobilQuoteBtn');
     const quoteModal = document.getElementById('quoteModal');
     
     if (quoteButtons.length > 0 && quoteModal) {

@@ -7,7 +7,6 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/logo.css">
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/about.css">
@@ -16,37 +15,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="about-page">
-    <!-- =========================== HEADER SECTION =========================== -->
+    <!-- Header and Navigation -->
     <header class="site-header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <a href="index.html" class="logo">
+        <div class="header-container">
+            <div class="site-logo">
+                <a href="index.html">
                     <img src="images/cgss-logo.png" alt="CentralGuards Security Services Logo">
                 </a>
             </div>
             
-            <div class="header-right">
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                        <span class="hamburger-icon"></span>
-                    </button>
-                    
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
-                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Careers</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <div class="nav-group">
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link active">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
                     </ul>
+                    
+                    <div class="mobile-utils">
+                        <a href="tel:18002CENTRAL" class="header-phone">
+                            <i class="fas fa-phone"></i>
+                            1-800-CENTRAL
+                        </a>
+                        <a href="#" class="header-quote-btn quote-btn" id="mobileQuoteBtn">Request a Quote</a>
+                    </div>
                 </nav>
                 
-                <div class="header-actions">
-                    <a href="#" class="btn btn-primary" id="getQuoteBtn">Request a Quote</a>
+                <div class="header-utils">
+                    <a href="tel:18002CENTRAL" class="header-phone">
+                        <i class="fas fa-phone"></i>
+                        1-800-CENTRAL
+                    </a>
+                    <a href="#" class="header-quote-btn quote-btn" id="getQuoteBtn">Request a Quote</a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ========================= END HEADER SECTION ========================= -->
-
+    
     <!-- =========================== MAIN CONTENT SECTION =========================== -->
     <main class="site-main">
         <!-- About Hero Section -->
@@ -55,6 +69,10 @@
                 <div class="about-hero-content">
                     <h1 class="page-title">About CentralGuards</h1>
                     <p class="lead-text">Your trusted security partner for over two decades, providing comprehensive security solutions for businesses of all sizes.</p>
+                    <div class="btn-container">
+                        <a href="#company-overview" class="btn btn-primary">Our Story</a>
+                        <a href="#leadership" class="btn btn-secondary">Meet Our Team</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -445,8 +463,8 @@
                             <input type="text" id="fullName" name="fullName" required>
                         </div>
                         <div class="form-group">
-                            <label for="companyName">Company Name</label>
-                            <input type="text" id="companyName" name="companyName">
+                            <label for="companyName">Company Name*</label>
+                            <input type="text" id="companyName" name="companyName" required>
                         </div>
                     </div>
                     
@@ -462,18 +480,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="serviceInterest">Services of Interest</label>
-                        <select id="serviceInterest" name="serviceInterest">
-                            <option value="" selected disabled>Select a service</option>
-                            <option value="physical-security">Physical Security</option>
-                            <option value="electronic-security">Electronic Security</option>
-                            <option value="specialized-services">Specialized Services</option>
-                            <option value="security-consulting">Security Consulting</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="requirements">Security Requirements</label>
+                        <label for="requirements">Message</label>
                         <textarea id="requirements" name="requirements" rows="4" placeholder="Please describe your security needs or concerns..."></textarea>
                     </div>
                     
@@ -488,16 +495,11 @@
                                 <input type="radio" name="preferredContact" value="phone">
                                 <span class="radio-text">Phone</span>
                             </label>
-                            <label class="radio-label">
-                                <input type="radio" name="preferredContact" value="either">
-                                <span class="radio-text">Either</span>
-                            </label>
                         </div>
                     </div>
                     
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
-                        <button type="reset" class="btn btn-secondary reset-btn">Clear Form</button>
                     </div>
                 </form>
                 
@@ -542,18 +544,8 @@
                         </ul>
                     </div>
                     <div class="footer-nav-column">
-                        <h4 class="footer-nav-title">Careers</h4>
-                        <ul class="footer-nav-list">
-                            <li><a href="careers.html#search-jobs">Current Openings</a></li>
-                            <li><a href="careers.html#why-join-section">Training Programs</a></li>
-                            <li><a href="careers.html#why-join-section">Benefits</a></li>
-                            <li><a href="careers.html#search-jobs">Apply Now</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav-column">
                         <h4 class="footer-nav-title">Contact</h4>
                         <ul class="footer-nav-list">
-                            <li><a href="#" id="footerQuoteBtn">Request a Quote</a></li>
                             <li><a href="contact.html">Support</a></li>
                             <li><a href="contact.html#map-section">Locations</a></li>
                             <li><a href="contact.html">Emergency Contact</a></li>
@@ -600,9 +592,13 @@
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/header-scroll.js"></script>
+    <script src="js/mobile-nav.js"></script>
     <script src="js/content.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/about.js"></script>
     <script src="js/quote-modal.js"></script>
+    <script src="js/quote-button.js"></script>
+    <script src="js/quote-form.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html> 

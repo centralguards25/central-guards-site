@@ -2,52 +2,6 @@
    CONTENT CSS
    =========================== */
 
-/* Hero Section */
-.hero-section {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: var(--space-3xl) 0;
-    background-image: linear-gradient(rgba(0, 32, 91, 0.75), rgba(0, 32, 91, 0.75)), url('../images/bg.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    min-height: 500px;
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.hero-title {
-    font-size: var(--font-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-md);
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: var(--font-xl);
-    margin-bottom: var(--space-xl);
-    opacity: 0.9;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: var(--space-md);
-}
-
-.hero-buttons .btn {
-    min-width: 160px;
-    font-weight: 700;
-    padding: 0.9rem 1.8rem;
-    letter-spacing: 0.5px;
-}
-
 /* Services Section */
 .services-section {
     padding: var(--space-3xl) 0;
@@ -82,14 +36,14 @@
 }
 
 .services-section .service-icon {
-    background-color: #00205b; /* Dark blue */
+    background-color: var(--primary-color);
     color: var(--white);
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    min-height: 30px;
-    max-width: 30px;
-    max-height: 30px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -97,10 +51,11 @@
     margin: 0 auto var(--space-md);
     flex-shrink: 0;
     box-sizing: content-box;
+    padding: 15px;
 }
 
 .services-section .service-icon i {
-    font-size: 1.2rem; /* Adjusted icon size for proper proportion with 30px circle */
+    font-size: 2rem;
 }
 
 .services-section .service-card h3 {
@@ -242,14 +197,6 @@
         width: 100%;
         max-width: 100%;
     }
-    
-    .hero-title {
-        font-size: var(--font-3xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-lg);
-    }
 }
 
 @media (max-width: 768px) {
@@ -261,28 +208,10 @@
         margin-bottom: var(--space-xl);
         width: 100%;
     }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .hero-buttons .btn {
-        width: 100%;
-        margin-bottom: var(--space-sm);
-    }
 }
 
 @media (max-width: 576px) {
     .services-section .services-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .hero-title {
-        font-size: var(--font-2xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-md);
     }
 } 

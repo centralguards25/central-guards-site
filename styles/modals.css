@@ -187,18 +187,13 @@ body.modal-open {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    pointer-events: none; /* Don't block clicks when hidden */
-}
-
-/* Hide any standalone quote form that might appear in the page flow */
-form[id="quoteRequestForm"]:not(.quote-form) {
-    display: none !important;
+    pointer-events: none; /* Initially don't capture clicks */
 }
 
 .quote-modal-overlay.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto; /* Allow interaction when visible */
+    pointer-events: auto; /* Capture clicks when active */
 }
 
 .quote-modal {
@@ -219,44 +214,43 @@ form[id="quoteRequestForm"]:not(.quote-form) {
 }
 
 .quote-modal-header {
-    background: linear-gradient(135deg, #0056b3, #004494);
-    color: white;
-    padding: 25px 30px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .quote-modal-header h3 {
-    font-size: 1.6rem;
     margin: 0;
-    font-weight: 600;
+    font-size: 1.5rem;
+    color: #153e76;
 }
 
 .quote-modal-close {
     background: none;
     border: none;
-    color: white;
-    font-size: 1.8rem;
+    font-size: 28px;
+    line-height: 1;
     cursor: pointer;
+    color: #888;
     padding: 0;
-    margin: 0;
     width: 30px;
     height: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
 .quote-modal-close:hover {
-    transform: scale(1.2);
+    color: #333;
+    transform: scale(1.1);
 }
 
 .quote-modal-body {
-    padding: 30px;
+    padding: 25px;
 }
 
 .quote-intro {
@@ -264,110 +258,36 @@ form[id="quoteRequestForm"]:not(.quote-form) {
 }
 
 .quote-intro p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #555;
     line-height: 1.6;
+    margin: 0;
 }
 
-/* Confirmation Message */
+/* Form styles are in forms.css */
+
 .quote-confirmation {
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 15px;
 }
 
 .confirmation-icon {
-    font-size: 5rem;
-    color: #28a745;
+    font-size: 60px;
+    color: #4CAF50;
     margin-bottom: 20px;
 }
 
 .quote-confirmation h4 {
-    font-size: 1.8rem;
-    color: #333;
+    font-size: 1.6rem;
     margin-bottom: 15px;
+    color: #153e76;
 }
 
 .quote-confirmation p {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1rem;
     margin-bottom: 25px;
-    max-width: 80%;
-    margin: 0 auto 25px;
-}
-
-.close-confirmation-btn {
-    padding: 12px 30px;
-    font-size: 1.05rem;
-}
-
-/* ===========================
-   CONDITIONAL FIELDS
-   =========================== */
-.conditional-field {
-    background-color: rgba(0, 86, 179, 0.05);
-    padding: 15px;
-    border-radius: 5px;
-    border-left: 3px solid #0056b3;
-    margin-left: 10px;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    animation: slideDown 0.3s ease forwards;
-}
-
-.conditional-field.active {
-    max-height: 100px;
-    opacity: 1;
-    margin-top: 15px;
-}
-
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        max-height: 100px;
-        transform: translateY(0);
-    }
-}
-
-.conditional-input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 0.95rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.conditional-input:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
-    outline: none;
-}
-
-/* Add styling for conditional fields in quote modal */
-#conditionalField {
-    transition: all 0.3s ease;
-}
-
-#conditionalField .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-#conditionalField select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: #fff;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* Notification styles */
@@ -418,17 +338,21 @@ form[id="quoteRequestForm"]:not(.quote-form) {
         gap: 20px;
     }
     
+    .quote-modal {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
     .quote-modal-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .quote-modal-body {
+        padding: 20px 15px;
+    }
+    
+    .quote-confirmation h4 {
         font-size: 1.4rem;
-    }
-    
-    .radio-group {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .quote-confirmation p {
-        max-width: 100%;
     }
 }
 
@@ -471,4 +395,9 @@ form[id="quoteRequestForm"]:not(.quote-form) {
     border-left: 3px solid #0056b3;
     padding-left: 15px;
     background-color: rgba(0, 86, 179, 0.05);
+}
+
+/* Hide any standalone quote forms */
+form#quoteRequestForm:not(.quote-form) {
+    display: none !important;
 } 

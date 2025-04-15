@@ -7,7 +7,6 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/logo.css">
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/services.css">
@@ -18,37 +17,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="services-page">
-    <!-- =========================== HEADER SECTION =========================== -->
+    <!-- Header and Navigation -->
     <header class="site-header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <a href="index.html" class="logo">
+        <div class="header-container">
+            <div class="site-logo">
+                <a href="index.html">
                     <img src="images/cgss-logo.png" alt="CentralGuards Security Services Logo">
                 </a>
             </div>
             
-            <div class="header-right">
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                        <span class="hamburger-icon"></span>
-                    </button>
-                    
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
-                        <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <div class="nav-group">
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link active">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
                     </ul>
+                    
+                    <div class="mobile-utils">
+                        <a href="tel:18002CENTRAL" class="header-phone">
+                            <i class="fas fa-phone"></i>
+                            1-800-CENTRAL
+                        </a>
+                        <a href="#" class="header-quote-btn quote-btn" id="mobileQuoteBtn">Request a Quote</a>
+                    </div>
                 </nav>
                 
-                <div class="header-actions">
-                    <a href="#" class="btn btn-primary" id="getQuoteBtn">Request a Quote</a>
+                <div class="header-utils">
+                    <a href="tel:18002CENTRAL" class="header-phone">
+                        <i class="fas fa-phone"></i>
+                        1-800-CENTRAL
+                    </a>
+                    <a href="#" class="header-quote-btn quote-btn" id="getQuoteBtn">Request a Quote</a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ========================= END HEADER SECTION ========================= -->
-
+    
     <!-- =========================== MAIN CONTENT SECTION =========================== -->
     <main class="site-main">
         <!-- Services Hero Section -->
@@ -57,6 +71,10 @@
                 <div class="services-hero-content">
                     <h1 class="page-title">Our Security Services</h1>
                     <p class="lead-text">Comprehensive security solutions tailored to your unique needs, delivered with excellence and integrity.</p>
+                    <div class="btn-container">
+                        <a href="#service-categories" class="btn btn-primary">Explore Services</a>
+                        <a href="#" class="btn btn-secondary" id="getQuoteBtn">Request a Quote</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -672,8 +690,8 @@
                             <input type="text" id="fullName" name="fullName" required>
                         </div>
                         <div class="form-group">
-                            <label for="companyName">Company Name</label>
-                            <input type="text" id="companyName" name="companyName">
+                            <label for="companyName">Company Name*</label>
+                            <input type="text" id="companyName" name="companyName" required>
                         </div>
                     </div>
                     
@@ -689,23 +707,12 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="serviceInterest">Services of Interest</label>
-                        <select id="serviceInterest" name="serviceInterest">
-                            <option value="" selected disabled>Select a service</option>
-                            <option value="physical-security">Physical Security</option>
-                            <option value="electronic-security">Electronic Security</option>
-                            <option value="specialized-services">Specialized Services</option>
-                            <option value="security-consulting">Security Consulting</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="requirements">Security Requirements</label>
+                        <label for="requirements">Message</label>
                         <textarea id="requirements" name="requirements" rows="4" placeholder="Please describe your security needs or concerns..."></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="preferredContact">Preferred Contact Method</label>
+                        <label>Preferred Contact Method*</label>
                         <div class="radio-group" role="radiogroup" aria-labelledby="contact-method-label">
                             <span id="contact-method-label" class="sr-only">Preferred Contact Method</span>
                             <label class="radio-option">
@@ -716,24 +723,11 @@
                                 <input type="radio" name="preferredContact" value="phone" id="contact-phone">
                                 <span class="radio-label">Phone</span>
                             </label>
-                            <label class="radio-option">
-                                <input type="radio" name="preferredContact" value="either" id="contact-either">
-                                <span class="radio-label">Either</span>
-                            </label>
                         </div>
-                        <!-- Conditional field will be added here by JavaScript -->
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-option">
-                            <input type="checkbox" name="urgent" id="urgent">
-                            <span class="checkbox-label">This is an urgent request</span>
-                        </label>
                     </div>
                     
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
-                        <button type="button" class="btn btn-secondary reset-btn">Reset Form</button>
                     </div>
                 </form>
                 
@@ -778,18 +772,8 @@
                         </ul>
                     </div>
                     <div class="footer-nav-column">
-                        <h4 class="footer-nav-title">Careers</h4>
-                        <ul class="footer-nav-list">
-                            <li><a href="careers.html#search-jobs">Current Openings</a></li>
-                            <li><a href="careers.html#why-join-section">Training Programs</a></li>
-                            <li><a href="careers.html#why-join-section">Benefits</a></li>
-                            <li><a href="careers.html#search-jobs">Apply Now</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav-column">
                         <h4 class="footer-nav-title">Contact</h4>
                         <ul class="footer-nav-list">
-                            <li><a href="#" id="footerQuoteBtn">Request a Quote</a></li>
                             <li><a href="contact.html">Support</a></li>
                             <li><a href="contact.html#map-section">Locations</a></li>
                             <li><a href="contact.html">Emergency Contact</a></li>
@@ -836,11 +820,72 @@
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/header-scroll.js"></script>
+    <script src="js/mobile-nav.js"></script>
     <script src="js/content.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/quote-modal.js"></script>
+    <script src="js/quote-button.js"></script>
+    <script src="js/quote-form.js"></script>
     <script src="js/services.js"></script>
     <script src="js/services-modal.js"></script>
-    <script src="js/quote-modal.js"></script>
     <script src="js/industry-modal.js"></script>
+    
+    <!-- Direct inline script for mobile menu -->
+    <script>
+        // Direct mobile menu handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if mobile menu is visible (small screen)
+            var isMobileView = window.innerWidth <= 992;
+            
+            // Get elements
+            var menuBtn = document.querySelector('.mobile-menu-toggle');
+            var nav = document.querySelector('.main-navigation');
+            var menuItems = document.querySelectorAll('.nav-link');
+            
+            // Initialize menu state
+            if (isMobileView && menuBtn && nav) {
+                // Set initial height to 0
+                nav.style.height = '0';
+                
+                // Toggle menu on button click
+                menuBtn.addEventListener('click', function(e) {
+                    console.log('Mobile menu clicked!');
+                    
+                    if (nav.style.height === '0px' || nav.style.height === '') {
+                        // Open menu
+                        nav.style.height = 'calc(100vh - 80px)';
+                        nav.style.overflow = 'auto';
+                        menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                    } else {
+                        // Close menu
+                        nav.style.height = '0';
+                        nav.style.overflow = 'hidden';
+                        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    e.preventDefault();
+                });
+                
+                // Close menu when links are clicked
+                menuItems.forEach(function(item) {
+                    item.addEventListener('click', function() {
+                        nav.style.height = '0';
+                        nav.style.overflow = 'hidden';
+                        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+                
+                // Close menu when ESC key is pressed
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && nav.style.height !== '0px') {
+                        nav.style.height = '0';
+                        nav.style.overflow = 'hidden';
+                        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

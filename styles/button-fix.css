@@ -1,0 +1,92 @@
+/* ===========================
+   BUTTON FIX CSS - Overrides all other button styling
+   =========================== */
+
+/* Reset all button styling */
+.btn {
+    display: inline-block !important;
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-right: 15px !important;
+    height: 48px !important;
+    line-height: 24px !important;
+}
+
+/* Ensure perfect centering for all buttons */
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #5D3FD3 !important;
+    color: #fff !important;
+    border: 2px solid #5D3FD3 !important;
+    box-shadow: 0 4px 15px rgba(93, 63, 211, 0.3) !important;
+}
+
+.btn-primary:hover {
+    background-color: #6B4FE3 !important;
+    border-color: #6B4FE3 !important;
+    box-shadow: 0 6px 20px rgba(93, 63, 211, 0.4) !important;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Remove any spans that might interfere with styling */
+.btn span {
+    position: static !important;
+    transform: none !important;
+    display: inline !important;
+    width: auto !important;
+}
+
+/* Additional fixes specifically for hero buttons */
+.hero-buttons .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 24px !important;
+}
+
+/* Fix for specific browser inconsistencies */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ specific styles */
+    .btn {
+        padding-top: 14px !important; /* slight adjustment for vertical alignment in IE */
+    }
+}
+
+/* Ultra-targeted selectors for hero section buttons only */
+.hero-section .hero-content-wrapper .hero-buttons .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: 48px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    padding: 0 24px !important;
+} 

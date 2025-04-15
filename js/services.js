@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     handleUrlHash();
     
     // Ensure quote buttons work properly
-    ensureQuoteButtonsWork();
+    // Delay slightly to ensure quote-modal.js has loaded
+    setTimeout(ensureQuoteButtonsWork, 100);
 });
 
 // Function to initialize the category tabs
@@ -211,93 +212,78 @@ function handleUrlHash() {
 
 // Function to ensure quote buttons work properly
 function ensureQuoteButtonsWork() {
-    // Find all quote buttons on the services page
-    const quoteButtons = document.querySelectorAll('#getQuoteBtn, #footerQuoteBtn, #ctaQuoteBtn');
+    console.log('Setting up service page quote buttons...');
     
-    console.log('Services page quote buttons check - found:', quoteButtons.length);
+    // Select all quote buttons
+    const quoteButtons = document.querySelectorAll('.request-quote-btn, #getQuoteBtn, #mobilQuoteBtn');
+    const quoteModal = document.getElementById('quoteModal');
     
-    // If the quote-modal.js hasn't bound these buttons yet, add our own listeners
-    quoteButtons.forEach(button => {
-        if (!button.getAttribute('data-quote-listener-added')) {
-            button.setAttribute('data-quote-listener-added', 'true');
-            
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Quote button clicked from services.js fallback handler');
+    if (quoteButtons.length > 0 && quoteModal) {
+        console.log('Quote buttons found on services page:', quoteButtons.length);
+        
+        quoteButtons.forEach(button => {
+            // Only add listener if not already added
+            if (!button.hasAttribute('data-service-listener')) {
+                button.setAttribute('data-service-listener', 'true');
                 
-                // Get the quote modal
-                const quoteModal = document.getElementById('quoteModal');
-                if (!quoteModal) {
-                    console.error('Quote modal not found!');
-                    return;
-                }
-                
-                // Get current service category if available
-                let serviceType = '';
-                const activeTab = document.querySelector('.category-tab.active');
-                if (activeTab) {
-                    serviceType = activeTab.getAttribute('data-category');
-                }
-                
-                // Pre-select service in dropdown if available
-                const serviceSelect = document.getElementById('serviceInterest');
-                if (serviceSelect && serviceType) {
-                    for (let i = 0; i < serviceSelect.options.length; i++) {
-                        if (serviceSelect.options[i].value === serviceType + '-security' || 
-                            serviceSelect.options[i].value === serviceType + '-services') {
-                            serviceSelect.selectedIndex = i;
-                            break;
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Quote button clicked from services.js');
+                    
+                    // Get service type from button if available
+                    const serviceType = this.getAttribute('data-service-type');
+                    
+                    // Set selected service in dropdown if available
+                    if (serviceType) {
+                        const serviceSelect = document.getElementById('serviceInterest');
+                        if (serviceSelect) {
+                            // Find matching option
+                            const options = Array.from(serviceSelect.options);
+                            const matchingOption = options.find(option => 
+                                option.value === serviceType || 
+                                option.textContent.toLowerCase().includes(serviceType.toLowerCase())
+                            );
+                            
+                            if (matchingOption) {
+                                serviceSelect.value = matchingOption.value;
+                            }
                         }
                     }
-                }
-                
-                // Show the form, hide confirmation
-                const quoteForm = document.getElementById('quoteRequestForm');
-                const quoteConfirmation = document.querySelector('.quote-confirmation');
-                
-                if (quoteForm) quoteForm.style.display = 'flex';
-                if (quoteConfirmation) quoteConfirmation.style.display = 'none';
-                
-                // Show the modal
-                quoteModal.classList.add('active');
-                document.body.classList.add('modal-open');
-                
-                // Focus first field
-                const fullNameField = document.getElementById('fullName');
-                if (fullNameField) {
-                    setTimeout(() => {
-                        fullNameField.focus();
-                    }, 100);
-                }
-                
-                // If the openQuoteModal function exists in global scope, use that instead
-                if (window.openQuoteModal && typeof window.openQuoteModal === 'function') {
-                    window.openQuoteModal(serviceType);
-                    return;
-                }
-            });
-        }
-    });
-    
-    // Also add event listeners to close buttons
-    const quoteModalClose = document.getElementById('quoteModalClose');
-    if (quoteModalClose && !quoteModalClose.getAttribute('data-close-listener-added')) {
-        quoteModalClose.setAttribute('data-close-listener-added', 'true');
-        
-        quoteModalClose.addEventListener('click', function() {
-            const quoteModal = document.getElementById('quoteModal');
-            if (quoteModal) {
-                quoteModal.classList.remove('active');
-                document.body.classList.remove('modal-open');
+                    
+                    // Show the modal
+                    quoteModal.classList.add('active');
+                    document.body.classList.add('modal-open');
+                    
+                    // Show form, hide confirmation
+                    const quoteForm = document.getElementById('quoteRequestForm');
+                    const quoteConfirmation = document.querySelector('.quote-confirmation');
+                    
+                    if (quoteForm) quoteForm.style.display = 'flex';
+                    if (quoteConfirmation) quoteConfirmation.style.display = 'none';
+                    
+                    // Focus first field
+                    const fullNameField = document.getElementById('fullName');
+                    if (fullNameField) {
+                        setTimeout(() => {
+                            fullNameField.focus();
+                        }, 100);
+                    }
+                });
             }
         });
     }
     
-    // Close when clicking outside the modal
-    const quoteModal = document.getElementById('quoteModal');
-    if (quoteModal && !quoteModal.getAttribute('data-click-outside-added')) {
-        quoteModal.setAttribute('data-click-outside-added', 'true');
-        
+    // Close button
+    const closeBtn = document.getElementById('quoteModalClose');
+    if (closeBtn && quoteModal) {
+        closeBtn.addEventListener('click', function() {
+            quoteModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        });
+    }
+    
+    // Close on overlay click
+    if (quoteModal) {
         quoteModal.addEventListener('click', function(e) {
             if (e.target === quoteModal) {
                 quoteModal.classList.remove('active');

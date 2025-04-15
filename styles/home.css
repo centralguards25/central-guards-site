@@ -1,0 +1,200 @@
+/* ===========================
+   HOME PAGE CSS
+   =========================== */
+
+/* Hero Section Specific Styles */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content-wrapper {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+    transition: transform 0.5s ease;
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: scale(1.05);
+}
+
+.hero-buttons .btn-primary {
+    background-color: #5D3FD3;
+    color: #fff;
+    border: 2px solid #5D3FD3;
+    box-shadow: 0 4px 15px rgba(93, 63, 211, 0.3);
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure the "Our Services" text is perfectly centered */
+.hero-buttons .btn-primary,
+.case-studies-cta .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+/* Absolute centering technique */
+.hero-buttons .btn-primary span,
+.case-studies-cta .btn-primary span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #6B4FE3;
+    border-color: #6B4FE3;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(93, 63, 211, 0.4);
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary {
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Featured Services Animation */
+.services-section .services-grid {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.services-section .service-card {
+    transition: all 0.3s ease;
+}
+
+/* Testimonials */
+.testimonials-section {
+    background-color: var(--off-white);
+}
+
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Counter Section */
+.stats-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    position: relative;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.stats-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-content-wrapper, 
+    .hero-image-wrapper {
+        width: 100%;
+    }
+    
+    .hero-content-wrapper {
+        padding: 40px 20px;
+    }
+    
+    .hero-image-wrapper {
+        height: 300px;
+    }
+    
+    .hero-image {
+        width: 100%;
+        right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+} 

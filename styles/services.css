@@ -1,34 +1,6 @@
 /* Services Page Styles */
 
-/* --- Hero Section --- */
-.services-hero-section {
-    background-color: var(--white);
-    color: var(--dark-gray);
-    padding: var(--space-3xl) 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/bg.png');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-}
-
-.services-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.page-title {
-    font-size: var(--font-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-lg);
-    color: var(--primary-color);
-}
-
-.lead-text {
-    font-size: var(--font-xl);
-    opacity: 0.9;
-    line-height: 1.6;
-    color: var(--dark-gray);
-}
+/* Service-specific styles will remain, hero section styles are now in main.css */
 
 /* --- Services Intro Section --- */
 .services-intro-section {

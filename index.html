@@ -3,152 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CentralGuards Security Services</title>
+    <title>CentralGuards - Professional Security Services</title>
     <!-- CSS Files -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/logo.css">
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/button-fix.css">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- =========================== HEADER SECTION =========================== -->
+    <!-- Header and Navigation -->
     <header class="site-header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <a href="index.html" class="logo">
+        <div class="header-container">
+            <div class="site-logo">
+                <a href="index.html">
                     <img src="images/cgss-logo.png" alt="CentralGuards Security Services Logo">
                 </a>
             </div>
             
-            <div class="header-right">
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                        <span class="hamburger-icon"></span>
-                    </button>
-                    
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                        <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <div class="nav-group">
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
                     </ul>
+                    
+                    <div class="mobile-utils">
+                        <a href="tel:18002CENTRAL" class="header-phone">
+                            <i class="fas fa-phone"></i>
+                            1-800-CENTRAL
+                        </a>
+                        <a href="#" class="header-quote-btn quote-btn" id="mobileQuoteBtn">Request a Quote</a>
+                    </div>
                 </nav>
                 
-                <div class="header-actions">
-                    <a href="#" class="btn btn-primary" id="getQuoteBtn">Request a Quote</a>
+                <div class="header-utils">
+                    <a href="tel:18002CENTRAL" class="header-phone">
+                        <i class="fas fa-phone"></i>
+                        1-800-CENTRAL
+                    </a>
+                    <a href="#" class="header-quote-btn quote-btn" id="getQuoteBtn">Request a Quote</a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ========================= END HEADER SECTION ========================= -->
-
-    <!-- =========================== MAIN CONTENT SECTION =========================== -->
-    <main class="site-main">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Your Corporate Security Partner in Unprecedented Times</h1>
-                    <p class="hero-subtitle">Professional security solutions tailored to your needs</p>
-                    <div class="hero-buttons">
-                        <a href="services.html" class="btn btn-primary">Our Services</a>
-                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-                    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content-wrapper">
+                <h1 class="hero-title">
+                    <span>Professional Security</span><br>
+                    <span>Services</span>
+                </h1>
+                <p class="hero-subtitle">Protecting what matters most with trained security personnel, advanced technology, and tailored security solutions for businesses and individuals across New Hampshire & Massachusetts.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Our Services</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services-section">
-            <div class="container">
-                <h2 class="section-title">Our Security Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Physical Security</h3>
-                        <p>Professionally trained security personnel for access control, surveillance, and incident response.</p>
-                        <a href="services.html#physical-security" class="service-link">Learn More <i class="fas fa-angle-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3>Electronic Security</h3>
-                        <p>Cutting-edge technology solutions for continuous monitoring and protection of your assets.</p>
-                        <a href="services.html#electronic-security" class="service-link">Learn More <i class="fas fa-angle-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <h3>Specialized Services</h3>
-                        <p>Tailored security solutions for specific needs including executive protection and event security.</p>
-                        <a href="services.html#specialized-services" class="service-link">Learn More <i class="fas fa-angle-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <h3>Security Consulting</h3>
-                        <p>Expert advisory services to identify risks and develop comprehensive security strategies.</p>
-                        <a href="services.html#security-consulting" class="service-link">Learn More <i class="fas fa-angle-right"></i></a>
-                    </div>
+    <!-- What We Do Section -->
+    <section class="what-we-do-section">
+        <div class="container">
+            <h2 class="what-we-do-title">Find out what we do</h2>
+            
+            <div class="what-we-do-container">
+                <div class="what-we-do-item">
+                    <img src="https://placeholder.pics/svg/800x800/DEDEDE/555555/Security" alt="Countering terrorism">
+                    <div class="what-we-do-label">Countering terrorism</div>
+                </div>
+                
+                <div class="what-we-do-item">
+                    <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=800&h=800&q=80&auto=format&fit=crop" alt="Countering state threats">
+                    <div class="what-we-do-label">Countering state threats</div>
+                </div>
+                
+                <div class="what-we-do-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=800&q=80&auto=format&fit=crop" alt="Protective security">
+                    <div class="what-we-do-label">Protective security</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">Why Choose CentralGuards?</h2>
-                        <p>With over 20 years of experience in the security industry, we provide tailored security solutions to businesses and individuals worldwide. Our team of trained professionals is committed to delivering exceptional service and protection.</p>
-                        <ul class="about-features">
-                            <li><i class="fas fa-check"></i> 24/7 Security Coverage</li>
-                            <li><i class="fas fa-check"></i> Highly Trained Personnel</li>
-                            <li><i class="fas fa-check"></i> Customized Security Plans</li>
-                            <li><i class="fas fa-check"></i> Advanced Technology Integration</li>
-                        </ul>
-                        <a href="about.html" class="btn btn-primary">Learn More About Us</a>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://placeholder.pics/svg/500x400/DEDEDE/555555/Security%20Team" alt="Security Team">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title">What Our Clients Say</h2>
-                <div class="testimonials-slider">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"CentralGuards has provided exceptional security services for our corporate offices. Their professionalism and attention to detail are unmatched."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/P" alt="Profile">
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <div class="container">
+            <h2 class="section-title">Our Case Studies</h2>
+            <p class="section-subtitle">Real security solutions we've implemented for clients across different industries</p>
+            
+            <div class="case-studies-slider">
+                <button class="slider-nav prev" aria-label="Previous case study">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="images/Lighthouse-credit-union-img.jpg" alt="Banking Security Case Study - Lighthouse Credit Union">
                             </div>
-                            <div class="author-info">
-                                <h4 class="author-name">John Smith</h4>
-                                <p class="author-position">Facilities Manager, TechCorp</p>
+                            <div class="case-study-content">
+                                <span class="case-study-category">FINANCIAL SECURITY</span>
+                                <h3 class="case-study-title">Lighthouse Credit Union</h3>
+                                <p class="case-study-description">Placed a security ambassador for the new headquarters in Dover, NH.</p>
+                                <div class="case-study-results">
+                                    <div class="result-item">
+                                        <span class="result-value">42%</span>
+                                        <span class="result-label">Fewer Incidents</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-value">15</span>
+                                        <span class="result-label">Locations</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Read Case Study <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
+                        
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="images/OSRAM-manufacturing-security-exeter-nh.jpg" alt="Manufacturing Security Case Study - OSRAM">
+                            </div>
+                            <div class="case-study-content">
+                                <span class="case-study-category">MANUFACTURING SECURITY</span>
+                                <h3 class="case-study-title">OSRAM Facility</h3>
+                                <p class="case-study-description">Provided comprehensive security for manufacturing plant in Exeter, NH.</p>
+                                <div class="case-study-results">
+                                    <div class="result-item">
+                                        <span class="result-value">24/7</span>
+                                        <span class="result-label">Coverage</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-value">100%</span>
+                                        <span class="result-label">Compliance</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="https://placeholder.pics/svg/350x200/006CBD/FFFFFF/Healthcare%20Security" alt="Healthcare Security Case Study">
+                            </div>
+                            <div class="case-study-content">
+                                <span class="case-study-category">HEALTHCARE SECURITY</span>
+                                <h3 class="case-study-title">Regional Medical Center</h3>
+                                <p class="case-study-description">Comprehensive security protocol for a 250-bed hospital.</p>
+                                <div class="case-study-results">
+                                    <div class="result-item">
+                                        <span class="result-value">98%</span>
+                                        <span class="result-label">Staff Safety Rating</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-value">250</span>
+                                        <span class="result-label">Beds Protected</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="https://placeholder.pics/svg/350x200/006CBD/FFFFFF/Construction%20Security" alt="Construction Security Case Study">
+                            </div>
+                            <div class="case-study-content">
+                                <span class="case-study-category">CONSTRUCTION SECURITY</span>
+                                <h3 class="case-study-title">Downtown Development Project</h3>
+                                <p class="case-study-description">Zero theft incidents over 18 months for $40M project.</p>
+                                <div class="case-study-results">
+                                    <div class="result-item">
+                                        <span class="result-value">0</span>
+                                        <span class="result-label">Theft Incidents</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-value">18</span>
+                                        <span class="result-label">Months</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study-card">
+                            <div class="case-study-image">
+                                <img src="https://placeholder.pics/svg/350x200/006CBD/FFFFFF/Event%20Security" alt="Event Security Case Study">
+                            </div>
+                            <div class="case-study-content">
+                                <span class="case-study-category">EVENT SECURITY</span>
+                                <h3 class="case-study-title">Annual Tech Conference</h3>
+                                <p class="case-study-description">VIP protection and crowd management for 5,000 attendees.</p>
+                                <div class="case-study-results">
+                                    <div class="result-item">
+                                        <span class="result-value">5K</span>
+                                        <span class="result-label">Attendees</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-value">3</span>
+                                        <span class="result-label">Days</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-nav next" aria-label="Next case study">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="case-studies-cta">
+                <a href="case-studies.html" class="btn btn-primary">View All Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"CentralGuards has provided exceptional security services for our corporate offices. Their professionalism and attention to detail are unmatched."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://placeholder.pics/svg/60x60/DEDEDE/555555/P" alt="Profile">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">John Smith</h4>
+                            <p class="author-position">Facilities Manager, TechCorp</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    <!-- ========================= END MAIN CONTENT SECTION ========================= -->
+        </div>
+    </section>
 
     <!-- =========================== QUOTE REQUEST MODAL =========================== -->
     <div class="quote-modal-overlay" id="quoteModal">
@@ -168,8 +281,8 @@
                             <input type="text" id="fullName" name="fullName" required>
                         </div>
                         <div class="form-group">
-                            <label for="companyName">Company Name</label>
-                            <input type="text" id="companyName" name="companyName">
+                            <label for="companyName">Company Name*</label>
+                            <input type="text" id="companyName" name="companyName" required>
                         </div>
                     </div>
                     
@@ -185,23 +298,12 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="serviceInterest">Services of Interest</label>
-                        <select id="serviceInterest" name="serviceInterest">
-                            <option value="" selected disabled>Select a service</option>
-                            <option value="physical-security">Physical Security</option>
-                            <option value="electronic-security">Electronic Security</option>
-                            <option value="specialized-services">Specialized Services</option>
-                            <option value="security-consulting">Security Consulting</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="requirements">Security Requirements</label>
+                        <label for="requirements">Message</label>
                         <textarea id="requirements" name="requirements" rows="4" placeholder="Please describe your security needs or concerns..."></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="preferredContact">Preferred Contact Method</label>
+                        <label>Preferred Contact Method*</label>
                         <div class="radio-group" role="radiogroup" aria-labelledby="contact-method-label">
                             <span id="contact-method-label" class="sr-only">Preferred Contact Method</span>
                             <label class="radio-option">
@@ -212,24 +314,11 @@
                                 <input type="radio" name="preferredContact" value="phone" id="contact-phone">
                                 <span class="radio-label">Phone</span>
                             </label>
-                            <label class="radio-option">
-                                <input type="radio" name="preferredContact" value="either" id="contact-either">
-                                <span class="radio-label">Either</span>
-                            </label>
                         </div>
-                        <!-- Conditional field will be added here by JavaScript -->
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-option">
-                            <input type="checkbox" name="urgent" id="urgent">
-                            <span class="checkbox-label">This is an urgent request</span>
-                        </label>
                     </div>
                     
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
-                        <button type="button" class="btn btn-secondary reset-btn">Reset Form</button>
                     </div>
                 </form>
                 
@@ -274,18 +363,8 @@
                         </ul>
                     </div>
                     <div class="footer-nav-column">
-                        <h4 class="footer-nav-title">Careers</h4>
-                        <ul class="footer-nav-list">
-                            <li><a href="careers.html#search-jobs">Current Openings</a></li>
-                            <li><a href="careers.html#why-join-section">Training Programs</a></li>
-                            <li><a href="careers.html#why-join-section">Benefits</a></li>
-                            <li><a href="careers.html#search-jobs">Apply Now</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav-column">
                         <h4 class="footer-nav-title">Contact</h4>
                         <ul class="footer-nav-list">
-                            <li><a href="#" id="footerQuoteBtn">Request a Quote</a></li>
                             <li><a href="contact.html">Support</a></li>
                             <li><a href="contact.html#map-section">Locations</a></li>
                             <li><a href="contact.html">Emergency Contact</a></li>
@@ -332,8 +411,12 @@
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/header-scroll.js"></script>
+    <script src="js/mobile-nav.js"></script>
     <script src="js/content.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/quote-modal.js"></script>
+    <script src="js/quote-button.js"></script>
 </body>
 </html> 
