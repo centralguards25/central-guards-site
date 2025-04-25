@@ -25,13 +25,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         html {
              scroll-padding-top: 80px; /* Offset for anchor links */
              scroll-behavior: smooth;
+             height: 100%; /* Ensure html takes full height */
         }
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #0f172a; /* Navy */
             background-color: #ffffff; /* White */
-            padding-bottom: 45px; /* Space for sticky footer on mobile */
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack children vertically */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
         }
         /* Container */
         .container {
@@ -265,62 +268,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #0f172a;
             font-size: 16px;
         }
-        /* Footer Styling */
+        /* Footer Styling - Redesigned */
         .footer {
-             padding: 0; /* Remove padding from main footer tag */
+             padding: 50px 20px;
              background:#0f172a;
-             color: #cbd5e1; /* Changed from #ffffff */
+             color: #cbd5e1; /* Use the lighter gray-blue */
              font-size:14px;
-        }
-        .footer-main {
-            padding:40px 20px; /* Apply padding to this inner container */
+             text-align: center; /* Center align everything */
         }
         .footer-container {
-             display:flex;
-             flex-wrap:wrap;
-             gap:32px;
-             max-width:1280px;
+             /* Removed flexbox styling for a centered stack */
+             max-width:700px; /* Narrower container for centered content */
              margin:0 auto;
         }
-        .footer-col {
-             flex:1 1 220px;
-             line-height:1.6;
+        .footer-logo {
+            margin-bottom: 25px;
         }
-        .footer-col strong {
-            color: #ffffff; /* Keep company name white */
+        .footer-logo img {
+            height: 36px; /* Slightly smaller footer logo */
+            width: auto;
+            margin: 0 auto; /* Center the logo */
         }
-        .footer-col a {
-            color: #cbd5e1; /* Changed from #ffffff */
+        .footer-contact-info p {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        .footer-contact-info a {
+            color: #cbd5e1;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
-        .footer-link {
-            color:#cbd5e1; /* Changed from #ffffff */
-            text-decoration:none;
-         }
-        .footer-link:hover, .footer-col a:hover {
-             color:#e11d48;
-             text-decoration: underline;
-         }
-         .footer-col .lic {
-             color: #94a3b8; /* Lighter gray for license numbers */
-         }
-         /* License Bar Styling */
-         .footer-license-bar {
-             background-color: #0c1323; /* Slightly darker navy */
-             color: #cbd5e1; /* Lighter text */
-             padding: 15px 20px;
-             font-size: 12px;
-             text-align: center;
-             line-height: 1.5;
-         }
-         .footer-license-bar span {
-             margin: 0 10px;
-             display: inline-block; /* Ensures spacing */
-         }
-         .footer-license-bar span:first-child {
-             font-weight: 600;
-             color: #ffffff;
-         }
+        .footer-contact-info a:hover {
+            color: #e11d48; /* Crimson hover */
+            text-decoration: underline;
+        }
+        .footer-links {
+            margin: 25px 0;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: #e11d48;
+        }
+        .footer-copyright {
+            font-size: 13px;
+            color: #94a3b8; /* Lighter gray for copyright */
+            margin-top: 20px;
+            border-top: 1px solid #1e293b; /* Subtle top border */
+            padding-top: 20px;
+        }
+        /* Removed .footer-col, .footer-main, .footer-license-bar styles */
 
         /* Form Styling Updates */
         .lead-form button[type="submit"] {
@@ -369,6 +370,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              }
         }
 
+        /* New style for main content area */
+        .main-content {
+            flex-grow: 1; /* Allow this section to grow and push footer down */
+        }
+
     </style>
 </head>
 <body>
@@ -378,198 +384,185 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <!-- ===================== UTILITY BAR START ===================== -->
     <div class="utility-bar">
-        <a href="/"><img class="site-logo" src="../../images/cgss-logo-white.png" alt="Central Guards Security Services Logo"></a>
+        <a href="https://centralguards.com/"><img class="site-logo" src="../../images/cgss-logo-white.png" alt="Central Guards Security Services Logo"></a>
         <a href="tel:+16036820961" class="utility-phone">📞 (603) 682-0961 (24/7)</a>
     </div>
     <!-- ===================== UTILITY BAR END ===================== -->
 
-    <!-- ===================== HERO SECTION START ===================== -->
-    <section style="background-color: #0f172a; color: #ffffff; padding: 60px 0 80px; text-align: center;">
-        <div class="container">
-            <!-- Removed logo link from here -->
-            <div class="hero-content">
-                <h1 style="font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">
-                    Reliable Fire-Watch Security Services
-                </h1>
-                <p style="font-size: 20px; margin: 0 auto 30px; opacity: 0.9;">
-                    Ensure compliance and protect your property during fire system outages with our professional, licensed fire-watch guards. Available 24/7 for immediate deployment.
+    <main class="main-content">
+        <!-- ===================== HERO SECTION START ===================== -->
+        <section style="background-color: #0f172a; color: #ffffff; padding: 60px 0 80px; text-align: center;">
+            <div class="container">
+                <!-- Removed logo link from here -->
+                <div class="hero-content">
+                    <h1 style="font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">
+                        Reliable Fire-Watch Security Services
+                    </h1>
+                    <p style="font-size: 20px; margin: 0 auto 30px; opacity: 0.9;">
+                        Ensure compliance and protect your property during fire system outages with our professional, licensed fire-watch guards. Available 24/7 for immediate deployment.
+                    </p>
+                    <div>
+                        <a href="tel:+16036820961" class="cta-button">Call 24/7 Dispatcher</a>
+                        <a href="#lead-form" class="secondary-button">Get Your Quote Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== HERO SECTION END ===================== -->
+
+        <!-- ===================== TRUST LOGO BAR SECTION START ===================== -->
+        <section style="padding: 40px 0; background-color: #ffffff;">
+            <div class="container">
+                <div class="flex-container">
+                    <img src="images/logo-placeholder.svg" alt="Client Logo 1" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
+                    <img src="images/logo-placeholder.svg" alt="Client Logo 2" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
+                    <img src="images/logo-placeholder.svg" alt="Client Logo 3" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
+                    <img src="images/logo-placeholder.svg" alt="Client Logo 4" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
+                </div>
+            </div>
+        </section>
+        <!-- ===================== TRUST LOGO BAR SECTION END ===================== -->
+
+
+        <!-- ===================== TRUST BAR SECTION START ===================== -->
+        <section style="background-color: #f8fafc; padding: 30px 0;">
+            <div class="container">
+                <div class="grid grid-cols-3" style="text-align: center; gap: 20px;">
+                    <div style="padding: 15px;">
+                        <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">24/7 Availability</strong>
+                        <span style="font-size: 14px; color: #475569;">Immediate Guard Dispatch</span>
+                    </div>
+                    <div style="padding: 15px;">
+                        <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">Licensed & Trained</strong>
+                        <span style="font-size: 14px; color: #475569;">NFPA Compliant Guards</span>
+                    </div>
+                    <div style="padding: 15px;">
+                        <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">Detailed Reporting</strong>
+                        <span style="font-size: 14px; color: #475569;">Full Compliance Documentation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== TRUST BAR SECTION END ===================== -->
+
+        <!-- ===================== PAIN/SOLUTION GRID SECTION START ===================== -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Avoid Fines & Ensure Safety During System Downtime</h2>
+                <p class="section-subtitle">Fire system malfunctions or maintenance require mandatory fire-watch patrols. We provide the professional solution you need.</p>
+                <div class="grid grid-cols-2">
+                    <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #e11d48; font-size: 18px; font-weight: 600; margin-bottom: 10px;">❌ The Risk: Non-Compliance Fines</h3>
+                        <p style="font-size: 16px; color: #334155;">Failure to implement a fire-watch during system impairments can lead to significant fines and potential business closure orders from the Fire Marshal. We serve Manchester, Nashua, Boston, Lowell, Portland, and Burlington.</p>
+                    </div>
+                    <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #16a34a; font-size: 18px; font-weight: 600; margin-bottom: 10px;">✅ Our Solution: Guaranteed Compliance</h3>
+                        <p style="font-size: 16px; color: #334155;">Our licensed guards perform required patrols and maintain detailed logs, ensuring you meet all local and NFPA regulations, keeping your business operational.</p>
+                    </div>
+                    <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #e11d48; font-size: 18px; font-weight: 600; margin-bottom: 10px;">❌ The Worry: Undetected Fires</h3>
+                        <p style="font-size: 16px; color: #334155;">With alarms or sprinklers offline, a small fire can quickly become catastrophic, endangering lives and causing devastating property damage.</p>
+                    </div>
+                    <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h3 style="color: #16a34a; font-size: 18px; font-weight: 600; margin-bottom: 10px;">✅ Our Solution: Vigilant Patrols</h3>
+                        <p style="font-size: 16px; color: #334155;">Our trained fire-watch personnel conduct continuous, thorough patrols of your property, providing early detection and rapid response to any fire hazards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== PAIN/SOLUTION GRID SECTION END ===================== -->
+
+        <!-- ===================== TESTIMONIAL SECTION START ===================== -->
+        <!-- itemscope itemtype="https://schema.org/Review" -->
+        <section style="padding-top: 0;"> <!-- Reduced padding -->
+            <div class="container testimonial-box" itemscope itemtype="https://schema.org/Review">
+                 <div class="testimonial-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                     <meta itemprop="ratingValue" content="5">
+                     <meta itemprop="bestRating" content="5">
+                     <span>★★★★★</span>
+                 </div>
+                 <p class="testimonial-text" itemprop="reviewBody">
+                     "We needed emergency fire-watch coverage on a Sunday night due to a sprinkler system failure. CentralGuards had guards on-site within 90 minutes. Very professional and saved us from potential fines!"
+                 </p>
+                 <p class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                     - <span itemprop="name">John D., Property Manager</span>
+                 </p>
+            </div>
+        </section>
+        <!-- ===================== TESTIMONIAL SECTION END ===================== -->
+
+
+        <!-- ===================== GUARANTEE / PRICING HOOK SECTION START ===================== -->
+        <section style="background-color: #0f172a; color: #ffffff; padding: 25px 0; text-align: center;">
+            <div class="container">
+                <p style="font-size: 20px; font-weight: 500;">
+                    🛡️ Flat $48/hr &nbsp;·&nbsp; 2-Hour Dispatch Guarantee &nbsp;·&nbsp; Cancel Anytime
                 </p>
-                <div>
-                    <a href="tel:+16036820961" class="cta-button">Call 24/7 Dispatcher</a>
-                    <a href="#lead-form" class="secondary-button">Get Your Quote Now</a>
+            </div>
+        </section>
+        <!-- ===================== GUARANTEE / PRICING HOOK SECTION END ===================== -->
+
+
+        <!-- ===================== LEAD FORM SECTION START ===================== -->
+        <section id="lead-form" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">Request Your Free Fire-Watch Quote</h2>
+                <p class="section-subtitle">Fill out the form below, and our security specialists will contact you shortly to discuss your fire-watch needs and provide a detailed quote.</p>
+                <div style="max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <!-- BEGIN Quote Form -->
+                    <form id="quote-form" action="https://formspree.io/f/xyzwyrar" method="POST" class="lead-form">
+                      <input type="hidden" name="_redirect" value="https://www.centralguardsecurity.com/services/firewatch/#thanks">
+                      <input type="hidden" name="gclid" id="gclid" value=""> <!-- GCLID field kept -->
+
+                      <input type="text"  name="full_name" placeholder="Full Name"       required>
+                      <input type="text"  name="company"   placeholder="Company Name">
+                      <input type="email" name="email"     placeholder="Email Address"   required>
+                      <input type="tel"   name="phone"     placeholder="Phone Number"    required>
+
+                      <textarea name="details" placeholder="Location, duration needed, type of property..." required></textarea>
+
+                      <div class="text-center">
+                          <button type="submit" id="submit-btn">Submit Request</button>
+                      </div>
+                    </form>
+
+                    <div id="thank-you" style="display:none;margin-top:24px;font-weight:600;">
+                      ✅ Thank you! Our dispatcher will call you within 5 minutes.
+                    </div>
+                    <!-- END Quote Form -->
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ===================== HERO SECTION END ===================== -->
-
-    <!-- ===================== TRUST LOGO BAR SECTION START ===================== -->
-    <section style="padding: 40px 0; background-color: #ffffff;">
-        <div class="container">
-            <div class="flex-container">
-                <img src="images/logo-placeholder.svg" alt="Client Logo 1" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
-                <img src="images/logo-placeholder.svg" alt="Client Logo 2" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
-                <img src="images/logo-placeholder.svg" alt="Client Logo 3" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
-                <img src="images/logo-placeholder.svg" alt="Client Logo 4" style="width: 120px; height: auto; filter: grayscale(100%); opacity: 0.7;">
-            </div>
-        </div>
-    </section>
-    <!-- ===================== TRUST LOGO BAR SECTION END ===================== -->
-
-
-    <!-- ===================== TRUST BAR SECTION START ===================== -->
-    <section style="background-color: #f8fafc; padding: 30px 0;">
-        <div class="container">
-            <div class="grid grid-cols-3" style="text-align: center; gap: 20px;">
-                <div style="padding: 15px;">
-                    <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">24/7 Availability</strong>
-                    <span style="font-size: 14px; color: #475569;">Immediate Guard Dispatch</span>
-                </div>
-                <div style="padding: 15px;">
-                    <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">Licensed & Trained</strong>
-                    <span style="font-size: 14px; color: #475569;">NFPA Compliant Guards</span>
-                </div>
-                <div style="padding: 15px;">
-                    <strong style="display: block; font-size: 18px; color: #0f172a; margin-bottom: 5px;">Detailed Reporting</strong>
-                    <span style="font-size: 14px; color: #475569;">Full Compliance Documentation</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ===================== TRUST BAR SECTION END ===================== -->
-
-    <!-- ===================== PAIN/SOLUTION GRID SECTION START ===================== -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Avoid Fines & Ensure Safety During System Downtime</h2>
-            <p class="section-subtitle">Fire system malfunctions or maintenance require mandatory fire-watch patrols. We provide the professional solution you need.</p>
-            <div class="grid grid-cols-2">
-                <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <h3 style="color: #e11d48; font-size: 18px; font-weight: 600; margin-bottom: 10px;">❌ The Risk: Non-Compliance Fines</h3>
-                    <p style="font-size: 16px; color: #334155;">Failure to implement a fire-watch during system impairments can lead to significant fines and potential business closure orders from the Fire Marshal. We serve Manchester, Nashua, Boston, Lowell, Portland, and Burlington.</p>
-                </div>
-                <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <h3 style="color: #16a34a; font-size: 18px; font-weight: 600; margin-bottom: 10px;">✅ Our Solution: Guaranteed Compliance</h3>
-                    <p style="font-size: 16px; color: #334155;">Our licensed guards perform required patrols and maintain detailed logs, ensuring you meet all local and NFPA regulations, keeping your business operational.</p>
-                </div>
-                <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <h3 style="color: #e11d48; font-size: 18px; font-weight: 600; margin-bottom: 10px;">❌ The Worry: Undetected Fires</h3>
-                    <p style="font-size: 16px; color: #334155;">With alarms or sprinklers offline, a small fire can quickly become catastrophic, endangering lives and causing devastating property damage.</p>
-                </div>
-                <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <h3 style="color: #16a34a; font-size: 18px; font-weight: 600; margin-bottom: 10px;">✅ Our Solution: Vigilant Patrols</h3>
-                    <p style="font-size: 16px; color: #334155;">Our trained fire-watch personnel conduct continuous, thorough patrols of your property, providing early detection and rapid response to any fire hazards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ===================== PAIN/SOLUTION GRID SECTION END ===================== -->
-
-    <!-- ===================== TESTIMONIAL SECTION START ===================== -->
-    <!-- itemscope itemtype="https://schema.org/Review" -->
-    <section style="padding-top: 0;"> <!-- Reduced padding -->
-        <div class="container testimonial-box" itemscope itemtype="https://schema.org/Review">
-             <div class="testimonial-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                 <meta itemprop="ratingValue" content="5">
-                 <meta itemprop="bestRating" content="5">
-                 <span>★★★★★</span>
-             </div>
-             <p class="testimonial-text" itemprop="reviewBody">
-                 "We needed emergency fire-watch coverage on a Sunday night due to a sprinkler system failure. CentralGuards had guards on-site within 90 minutes. Very professional and saved us from potential fines!"
-             </p>
-             <p class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                 - <span itemprop="name">John D., Property Manager</span>
-             </p>
-        </div>
-    </section>
-    <!-- ===================== TESTIMONIAL SECTION END ===================== -->
-
-
-    <!-- ===================== GUARANTEE / PRICING HOOK SECTION START ===================== -->
-    <section style="background-color: #0f172a; color: #ffffff; padding: 25px 0; text-align: center;">
-        <div class="container">
-            <p style="font-size: 20px; font-weight: 500;">
-                🛡️ Flat $48/hr &nbsp;·&nbsp; 2-Hour Dispatch Guarantee &nbsp;·&nbsp; Cancel Anytime
-            </p>
-        </div>
-    </section>
-    <!-- ===================== GUARANTEE / PRICING HOOK SECTION END ===================== -->
-
-
-    <!-- ===================== LEAD FORM SECTION START ===================== -->
-    <section id="lead-form" style="background-color: #f1f5f9;">
-        <div class="container">
-            <h2 class="section-title">Request Your Free Fire-Watch Quote</h2>
-            <p class="section-subtitle">Fill out the form below, and our security specialists will contact you shortly to discuss your fire-watch needs and provide a detailed quote.</p>
-            <div style="max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                <!-- BEGIN Quote Form -->
-                <form id="quote-form" action="https://formspree.io/f/xyzwyrar" method="POST" class="lead-form">
-                  <input type="hidden" name="_redirect" value="https://www.centralguardsecurity.com/services/firewatch/#thanks">
-                  <input type="hidden" name="gclid" id="gclid" value=""> <!-- GCLID field kept -->
-
-                  <input type="text"  name="full_name" placeholder="Full Name"       required>
-                  <input type="text"  name="company"   placeholder="Company Name">
-                  <input type="email" name="email"     placeholder="Email Address"   required>
-                  <input type="tel"   name="phone"     placeholder="Phone Number"    required>
-
-                  <textarea name="details" placeholder="Location, duration needed, type of property..." required></textarea>
-
-                  <div class="text-center">
-                      <button type="submit" id="submit-btn">Submit Request</button>
-                  </div>
-                </form>
-
-                <div id="thank-you" style="display:none;margin-top:24px;font-weight:600;">
-                  ✅ Thank you! Our dispatcher will call you within 5 minutes.
-                </div>
-                <!-- END Quote Form -->
-            </div>
-        </div>
-    </section>
-    <!-- ===================== LEAD FORM SECTION END ===================== -->
+        </section>
+        <!-- ===================== LEAD FORM SECTION END ===================== -->
+    </main>
 
     <!-- ===================== FOOTER SECTION START ===================== -->
     <footer class="footer" itemscope itemtype="https://schema.org/Organization">
-        <div class="footer-main">
-            <div class="footer-container">
-                <meta itemprop="name" content="Central Guards Security Services, LLC">
-                <div class="footer-col" id="footer-company">
-                    <strong itemprop="name">Central Guards Security Services, LLC</strong><br>
-                    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                        <span itemprop="streetAddress">123 Elm Street, Suite 248</span><br>
-                        <span itemprop="addressLocality">Manchester</span>,
-                        <span itemprop="addressRegion">NH</span>
-                        <span itemprop="postalCode">03101</span>
-                    </span><br>
-                    Phone: <a href="tel:+16036820961" itemprop="telephone">(603) 682-0961</a><br>
-                    Email: <a href="mailto:info@centralguardsecurity.com" itemprop="email">info@centralguardsecurity.com</a>
-                </div>
-
-                <div class="footer-col" id="footer-links">
-                    <a href="/services/fire-watch/" class="footer-link">Fire-Watch</a><br>
-                    <a href="/services/mobile-patrol/" class="footer-link">Mobile Patrol</a><br>
-                    <a href="/privacy.html" class="footer-link">Privacy Policy</a><br>
-                    <a href="/terms.html" class="footer-link">Terms of Service</a>
-                </div>
-
-                <div class="footer-col" id="footer-licenses-main">
-                    NH Security License #<span class="lic">XXXX</span><br>
-                    MA Security License #<span class="lic">YYYY</span><br>
-                    © <span id="current-year"></span> Central Guards Security Services
-                </div>
+        <div class="footer-container">
+            <div class="footer-logo">
+                 <a href="https://centralguards.com/"><img src="../../images/cgss-logo-white.png" alt="Central Guards Security Services Logo" style="height: 36px; width: auto; margin: 0 auto;"></a>
+            </div>
+            <div class="footer-contact-info">
+                <meta itemprop="name" content="Central Guards Security Services, Inc.">
+                 <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">1087 Elm Street, Suite 248</span>, 
+                    <span itemprop="addressLocality">Manchester</span>, 
+                    <span itemprop="addressRegion">NH</span> 
+                    <span itemprop="postalCode">03101</span>
+                 </p>
+                 <p>
+                    Phone: <a href="tel:+16036820961" itemprop="telephone">(603) 682-0961</a> | 
+                    Email: <a href="mailto:info@centralguards.com" itemprop="email">info@centralguards.com</a>
+                 </p>
+            </div>
+            <div class="footer-links">
+                <a href="https://centralguards.org/privacy-policy/" class="footer-link">Privacy Policy</a>
+                <a href="/terms.html" class="footer-link">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                © <span id="current-year"></span> Central Guards Security Services, Inc. All Rights Reserved.
             </div>
         </div>
-        <!-- License Bar START -->
-        <div class="footer-license-bar">
-            <span>State Licenses</span> |
-            <span>California License # PPO 120776</span> |
-            <span>Oregon License # 107815</span> |
-            <span>Washington License # 22011817</span> |
-            <span>Georgia License # PSC002660</span> |
-            <span>Texas License # B18904401</span> |
-            <span>Florida License # B3200613</span>
-        </div>
-        <!-- License Bar END -->
      </footer>
     <!-- ===================== FOOTER SECTION END ===================== -->
 
