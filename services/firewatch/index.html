@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-=======
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -10,7 +8,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KXSR94K');</script>
 <!-- End Google Tag Manager -->
->>>>>>> 62807c59f4c38469a7522af05465419b3c132df6
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire-Watch Security Services</title>
@@ -34,6 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.6;
             color: #0f172a; /* Navy */
             background-color: #ffffff; /* White */
+            padding-bottom: 45px; /* Space for sticky footer on mobile */
         }
         /* Container */
         .container {
@@ -238,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 line-height: 45px; /* Vertically center text */
             }
             body {
-                 padding-bottom: 45px;
+                 padding-bottom: 45px; /* Ensure content doesn't hide behind footer */
             }
         }
         /* Testimonial Styling */
@@ -324,18 +322,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              color: #ffffff;
          }
 
-        @media (max-width: 768px) {
-             .footer-container {
-                 flex-direction:column;
-                 text-align: center;
-             }
-             .footer-license-bar span {
-                 margin: 3px 5px;
-                 display: block; /* Stack on mobile */
-             }
-        }
-
-<<<<<<< HEAD
         /* Form Styling Updates */
         .lead-form button[type="submit"] {
             /* Apply cta-button styles directly or create a new class */
@@ -372,10 +358,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center;
         }
 
-    </style>
-</head>
-<body>
-=======
+        @media (max-width: 768px) {
+             .footer-container {
+                 flex-direction:column;
+                 text-align: center;
+             }
+             .footer-license-bar span {
+                 margin: 3px 5px;
+                 display: block; /* Stack on mobile */
+             }
+        }
+
     </style>
 </head>
 <body>
@@ -383,7 +376,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXSR94K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
->>>>>>> 62807c59f4c38469a7522af05465419b3c132df6
     <!-- ===================== UTILITY BAR START ===================== -->
     <div class="utility-bar">
         <a href="/"><img class="site-logo" src="../../images/cgss-logo-white.png" alt="Central Guards Security Services Logo"></a>
@@ -509,7 +501,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <h2 class="section-title">Request Your Free Fire-Watch Quote</h2>
             <p class="section-subtitle">Fill out the form below, and our security specialists will contact you shortly to discuss your fire-watch needs and provide a detailed quote.</p>
-<<<<<<< HEAD
             <div style="max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
                 <!-- BEGIN Quote Form -->
                 <form id="quote-form" action="https://formspree.io/f/xyzwyrar" method="POST" class="lead-form">
@@ -533,46 +524,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <!-- END Quote Form -->
             </div>
-=======
-            <form action="#" method="POST" class="lead-form" style="max-width: 650px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                 <input type="hidden" name="gclid" id="gclid" value="">
-                <div class="grid grid-cols-2">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company Name:</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                </div>
-                <div class="grid grid-cols-2">
-                     <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Briefly Describe Your Needs:</label>
-                    <textarea id="message" name="message" rows="4" placeholder="e.g., Location, duration needed, type of property..."></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="cta-button" style="width: 100%; max-width: 250px; padding: 14px;">Submit Request</button>
-                </div>
-            </form>
->>>>>>> 62807c59f4c38469a7522af05465419b3c132df6
         </div>
     </section>
     <!-- ===================== LEAD FORM SECTION END ===================== -->
 
     <!-- ===================== FOOTER SECTION START ===================== -->
-    <footer class="footer">
+    <footer class="footer" itemscope itemtype="https://schema.org/Organization">
         <div class="footer-main">
-            <div class="footer-container" itemscope itemtype="https://schema.org/Organization">
+            <div class="footer-container">
                 <meta itemprop="name" content="Central Guards Security Services, LLC">
                 <div class="footer-col" id="footer-company">
                     <strong itemprop="name">Central Guards Security Services, LLC</strong><br>
@@ -620,6 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- ===================== STICKY MOBILE FOOTER END ===================== -->
 
+    <!-- Keep existing GCLID script -->
     <script>
         // GCLID tracking
         const urlParams = new URLSearchParams(window.location.search);
@@ -636,7 +596,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             currentYearSpan.textContent = new Date().getFullYear();
         }
     </script>
-<<<<<<< HEAD
 
     <!-- New Form Submission Script -->
     <script>
@@ -661,8 +620,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
     </script>
 </body>
-</html> 
-=======
-</body>
-</html> 
->>>>>>> 62807c59f4c38469a7522af05465419b3c132df6
+</html>
